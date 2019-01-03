@@ -16,7 +16,6 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 		 	var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 			 // Set up conditional statements
 			 
-			// if you guess wrong, then you lose a point
 			if (options.indexOf(userGuess) > -1) {
 				// if you guess correctly, then you win
 				if (userGuess === computerGuess) {
