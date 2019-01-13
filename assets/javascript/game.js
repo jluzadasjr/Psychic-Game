@@ -16,15 +16,16 @@ var selectedChoice = new Array();
 
 
 document.onkeyup = function () {
+
 var playerGuess = event.key;
-console.log = playerGuess; 
+// console.log = playerGuess; 
 
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
 //Random guesses of letters
 var randGuess = cpuLetters[Math.floor(Math.random() * cpuLetters.length)];
 
-if(letters.indexOf(playerGuess) > -1){
+if (letters.indexOf(playerGuess) > -1){
 //If letter is guessed correctly, then you win
 	if (playerGuess === randGuess) { 
 			alert("You win!")
@@ -46,4 +47,11 @@ if(letters.indexOf(playerGuess) > -1){
 			}
 		}
 }
+var game = 
+"<h1>Golden State Psychics</h1>" + "<h3>Guess the Letters</h3>" + "#win-cont" + wins + "#loss-cont" + losses + "#guess" + guessLimit + "<span> Letter Guessed: </span>"
++ guessLimit.join(", ");
+
+document.querySelector("#game").innerHTML = game
+
+
 
