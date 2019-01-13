@@ -23,7 +23,6 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 
 //Random guesses of letters
 var randGuess = cpuLetters[Math.floor(Math.random() * cpuLetters.length)];
-console.log(randGuess);
 
 if(letters.indexOf(playerGuess) > -1){
 //If letter is guessed correctly, then you win
@@ -47,3 +46,4 @@ if(letters.indexOf(playerGuess) > -1){
 			}
 		}
 }
+
