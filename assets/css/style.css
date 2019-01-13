@@ -1,0 +1,40 @@
+body{
+    background: url("../images/gswbackground.jpg")
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Bangers', cursive;
+    color: blue;
+}
+
+
+h3 {
+    font-size: 40px;
+    font-family: 'Bangers', cursive;
+    color: #ffcc00;
+}
+
+h4 {
+    font-size: 35px;
+    font-family: 'Bangers', cursive;
+    color: red;
+}
+
+.container2 {
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    color: blue; 
+    border-style: dotted;
+    border-color: white;
+
+}
+
+.container3 { 
+    font-family: 'Bangers', cursive;
+    font-size: 60px;
+    color:white;
+}
+
+
+

@@ -1,53 +1,49 @@
-// <!-- Set up variables -->
+// Set up varaibles here
+var cpuLetters =  ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+var wins = 0;
+document.getElementById("win-cont").innerHTML = wins;
+console.log(wins);
 
-		 var wins = 0;
-		 var losses = 0;
-		 var numGuesses = 9;
-		 var guessChoices = [];
+var losses = 0;
+document.getElementById("loss-cont").innerHTML = losses;
+console.log(losses);
 
-		 document.onkeyup = function(event) {
+var guessLimit = 10;
+document.getElementById("guess").innerHTML = guessLimit;
+console.log(guessLimit);
+var selectedChoice = new Array();
 
-		 	var userGuess = event.key;
 
-		 	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+document.onkeyup = function () {
+var playerGuess = event.key;
+console.log = playerGuess; 
 
-		 	var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-			 // Set up conditional statements
-			 
-			if (options.indexOf(userGuess) > -1) {
-				// if you guess correctly, then you win
-				if (userGuess === computerGuess) {
-					wins++;
-					numGuesses = 9;
-					guessChoices = [];
-				}
-				// if guess does not equal computer's guess, then your guesses will be deducted.
-				if (userGuess != computerGuess) {
-					numGuesses --;
-					guessChoices.push(userGuess);
-				}
-				// If guess equals 0, then you lose.
-				if (numGuesses === 0) {
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
-				numGuesses = 9;
-				losses ++;
-				guessChoices = [];
+//Random guesses of letters
+var randGuess = cpuLetters[Math.floor(Math.random() * cpuLetters.length)];
+console.log(randGuess);
 
-				
+if(letters.indexOf(playerGuess) > -1){
+//If letter is guessed correctly, then you win
+	if (playerGuess === randGuess) { 
+			alert("You win!")
+			wins++;
+			guessLimit = 10; 
+			selectedChoice = [];
+		}
+//If the player's guess does not = computer's random guess, then a guess will be deducted
+	else if (playerGuess != randGuess) { 
+			alert("You lose!")
+			playerGuess --;
+			selectedChoice.push(playerGuess)
+		}
+//If player's guess limit runs out, then a loss will be accounted for. 
+	else if (guessLimit === 0) {
+			guessLimit = 10;
+			losses --;
+			selectedChoice = [];
 			}
-
-			var html = 
-			"<h1> The Psychic Game </h1>" +
-			"<p>Guess what letter I'm thinking of!</p>" +
-			"<p>Wins: " + wins + "</p>" +
-			"<p>Losses: " + losses + "</p>" +
-			"<p>Guesses Left: " + numGuesses + "</p>" +
-			"<p>Your Guesses so far: " + guessChoices.join(", ") + "</p>";
-
-			document.querySelector("#game").innerHTML = html;
-
-			
-			}
-		};
+		}
+}
